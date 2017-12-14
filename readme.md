@@ -73,7 +73,7 @@ module.exports = {
 
 
 ### webpack模块
-通过使用不同的Loader，Webpack可以的脚本和工具，从而对不同的文件格式进行特定处理(例如 vue,css,less,sass等)，以css为例
+通过使用不同的Loader，Webpack可以的脚本和工具，从而对不同的文件格式进行特定处理(例如 vue,css,less,sass等),以css为例
 
 #### css-loader和style-loader
 css-loader和style-loader 是用来打包css文件的loader，期中style-loader负责处理css文件中的诸如url()等外部信息的，css-loader负责将css文件转换为style标签并打包。两者需要先使用npm进行安装
@@ -96,3 +96,4 @@ npm install css-loader --save-dev
     },
 ```
 之后我们再运行`npm run dev`就会发现css生效了，而且整个加载过程中没有加载css文件，所有的样式都打包在了bundle.js中
+这东西到底是个什么鬼
