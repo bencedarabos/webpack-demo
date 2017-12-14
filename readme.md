@@ -1,4 +1,4 @@
-## webpack3 学习笔记
+## webpack3 学习笔记
 小白的现代化前端学习笔记
 
 ### webpack环境搭建与基础配置
@@ -13,9 +13,9 @@ npm install webpack --save-dev
 npm install webpack-dev-server
 ```
 #### webpack基础配置
-装好webpack之后，可以直接使用`webpack input output`的方式使用，但是参数较多，所以通常放在单独的配置文件webpack.config.js中，webpack运行时也会检查当前目录是否存在webpack.config.js，存在则加载并使用。
+装好webpack之后，可以直接使用`webpack input output`的方式使用，但是参数较多，所以通常放在单独的配置文件webpack.config.js中，webpack运行时也会检查当前目录是否存在webpack.config.js，存在则加载并使用。
 
-一个基础的的webpack.config.js是这样的，这里创建了两个文件夹，src和dist分别用来存储源码和打包后的文件。
+一个基础的的webpack.config.js如下，这里创建了两个文件夹，src和dist分别用来存储源码和打包后的文件。
 
 ```javascript
 var path = require('path') // 类似python中的os.path模块，封装了对路径的基本操作
@@ -48,7 +48,7 @@ module.exports = {
 }
 ```
 
-此时就可以使用`webpack`（非全局安装时为node_modules/.bin/webpack)打包项目，或者使用`webpack-dev-server`进行热更新本地服务器
+此时就可以使用`webpack`(非全局安装时间使用./node_module/.bin/webpack)打包项目，或者使用`webpack-dev-server`开启本地热更新服务器
 
 此外也可以在package.json里设置指令的别名，绑定到npm run [scriptname]，方便统一使用
 ```json
@@ -69,14 +69,14 @@ module.exports = {
   }
 }
 ```
-然后就可以使用`npm run build`和`npm run dev`分别进行打包和开启本地服务器了
+然后就可以使用`npm run build`和`npm run dev`分别进行打包和开启本地服务器
 
 
 ### webpack模块
-通过使用不同的Loader，Webpack可以的脚本和工具，从而对不同的文件格式进行特定处理（例如 vue,css,less,sass等），以css为例
+通过使用不同的Loader，Webpack可以的脚本和工具，从而对不同的文件格式进行特定处理(例如 vue,css,less,sass等)，以css为例
 
 #### css-loader和style-loader
-css-loader和style-loader 是用来打包css文件的loader，期中style-loader负责处理css文件中的诸如url()等外部信息的，css-loader负责将css文件转换为style标签进行打包。两者需要先使用npm进行安装
+css-loader和style-loader 是用来打包css文件的loader，期中style-loader负责处理css文件中的诸如url()等外部信息的，css-loader负责将css文件转换为style标签并打包。两者需要先使用npm进行安装
 ```bash
 npm install style-loader --save-dev
 npm install css-loader --save-dev
